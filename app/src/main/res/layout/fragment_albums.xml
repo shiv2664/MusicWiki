@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.shivam.musicwiki.interfaces.IMainActivity" />
+
+        <import type="java.util.List"/>
+        <import type="com.shivam.musicwiki.models.albums.AlbumDataClass"/>
+
+        <variable
+            name="dataList"
+            type="List&lt;AlbumDataClass>"/>
+
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_animals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:bind_album_recyclerview="@{dataList}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
